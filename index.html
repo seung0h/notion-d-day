@@ -1,0 +1,43 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>D-Day Widget</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      background: #f8f9fa;
+    }
+    h1 {
+      margin-bottom: 10px;
+      font-size: 2rem;
+      color: #333;
+    }
+    .dday {
+      font-size: 3rem;
+      color: #ff4757;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1>D-Day Counter</h1>
+  <div class="dday" id="dday">Loading...</div>
+
+  <script>
+    const targetDate = new Date('2025-05-01');
+
+    const today = new Date();
+    const diff = Math.ceil((targetDate - today) / (1000 * 60 * 60 * 24));
+    const text = diff === 0 ? "🎉 D-DAY 🎉" : `D-${diff}`;
+    document.getElementById("dday").innerText = text;
+  </script>
+</body>
+</html>
