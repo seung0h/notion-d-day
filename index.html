@@ -32,7 +32,9 @@
   <div class="dday" id="dday">Loading...</div>
 
   <script>
-    const targetDate = new Date('2025-05-01');
+    const params = new URLSearchParams(window.location.search);
+    const dateStr = params.get("date") || "2025-05-01";
+    const targetDate = new Date(dateStr);
 
     const today = new Date();
     const diff = Math.ceil((targetDate - today) / (1000 * 60 * 60 * 24));
