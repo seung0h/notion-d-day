@@ -34,7 +34,7 @@
   <script>
     const params = new URLSearchParams(window.location.search);
     const title = params.get("title") || "D-Day Counter";
-    const dateStr = params.get("date") || "2025-05-01";
+    const dateStr = params.get("date") || "2099-01-01";
     const targetDate = new Date(dateStr);
 
     document.getElementById("title").innerText = decodeURIComponent(title);
